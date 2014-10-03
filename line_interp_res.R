@@ -1,4 +1,29 @@
 # Goal: to generate trend curves that show the effect of survival QTL on the phenotype (survival)
+library(lattice)
+library(ggplot2)
+gdays_Res <- read.csv('/Volumes/group_dv/personal/DValenzano/Oct2014/gdaysRes2_tab.csv', sep=',', header=TRUE)
+
+gdays_Res_LG1 <- subset(gdays_Res, gdays_Res$LG == '1')
+gdays_Res_LG2 <- subset(gdays_Res, gdays_Res$LG == '2')
+gdays_Res_LG3 <- subset(gdays_Res, gdays_Res$LG == '3')
+gdays_Res_LG4 <- subset(gdays_Res, gdays_Res$LG == '4')
+gdays_Res_LG5 <- subset(gdays_Res, gdays_Res$LG == '5')
+gdays_Res_LG6 <- subset(gdays_Res, gdays_Res$LG == '6')
+gdays_Res_LG7 <- subset(gdays_Res, gdays_Res$LG == '7')
+gdays_Res_LG8 <- subset(gdays_Res, gdays_Res$LG == '8')
+gdays_Res_LG9 <- subset(gdays_Res, gdays_Res$LG == '9')
+gdays_Res_LG10 <- subset(gdays_Res, gdays_Res$LG == '10')
+gdays_Res_LG11 <- subset(gdays_Res, gdays_Res$LG == '11')
+gdays_Res_LG12 <- subset(gdays_Res, gdays_Res$LG == '12')
+gdays_Res_LG13 <- subset(gdays_Res, gdays_Res$LG == '13')
+gdays_Res_LG14 <- subset(gdays_Res, gdays_Res$LG == '14')
+gdays_Res_LG15 <- subset(gdays_Res, gdays_Res$LG == '15')
+gdays_Res_LG16 <- subset(gdays_Res, gdays_Res$LG == '16')
+gdays_Res_LG17 <- subset(gdays_Res, gdays_Res$LG == '17')
+gdays_Res_LG18 <- subset(gdays_Res, gdays_Res$LG == '18')
+gdays_Res_LG19 <- subset(gdays_Res, gdays_Res$LG == '19')
+
+
 gdays_Res_LG1_2 <- gdays_Res_LG1[,1:3]
 gdays_Res_LG1_2
 gdays_Res_LG1_3 <- rbind(gdays_Res_LG1_2, gdays_Res_LG1_2, gdays_Res_LG1_2)
@@ -11,7 +36,7 @@ gdays_Res_LG1_3
 pg1 <- ggplot(gdays_Res_LG1_3, aes(x=cM, y=med, group=genotype, color=genotype)) +
   geom_smooth(alpha=.4, size=1) + geom_point(alpha=1) +
   ggtitle("gdays_Res, LG1") + ylim(180,380) + xlim(0,max(gdays_Res_LG1$cM)) + xlab("cM")+ylab("Days")+theme(legend.position="bottom")
-  
+
 q1<- qplot(cM,neg_log.qval., data=gdays_Res_LG1, xlab="cM", ylab="-log(q)", ylim=c(0,3), xlim=c(0, max(gdays_Res_LG1$cM)))
 #multiplot(pg1, q1, cols=1)
 
