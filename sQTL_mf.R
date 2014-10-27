@@ -131,5 +131,15 @@ fitmf <- survfit(formula=Surv(X.2,status)~X.1, data=gmf_17025)
 plot(fitmf, xlim=c(0,500), ylab="Fraction survived", xlab="Time (days)", lwd=c(2.5,2.5), lty=c(1,2), main="G-cross, ll survival for peak marker +3 (17025)")
 legend(400,.9, legend=c("males", "females"), lwd=c(2.5,2.5), lty=c(1,2))
 
+# Eventually, I want to generate a final plot with survival in males only, for the ll genotype only
+gms_26385$group = rep(1, length(gms_26385$X))
+gms_25003$group = rep(2, length(gms_25003$X))
+gms_46347$group = rep(3, length(gms_46347$X))
+gms_12535$group = rep(4, length(gms_12535$X))
+gms_13555$group = rep(5, length(gms_13555$X))
+gms_31890$group = rep(6, length(gms_31890$X))
+gms_17025$group = rep(7, length(gms_17025$X))
 
-
+gm_ll <- rbind(gms_26385, gms_25003, gms_46347, gms_12535, gms_13555, gms_31890, gms_17025)
+fitgm_ll <- survfit(formula=Surv(X.2,status)~group, data=gm_ll)
+plot(fitgm_ll)
