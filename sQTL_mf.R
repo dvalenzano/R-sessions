@@ -142,4 +142,7 @@ gms_17025$group = rep(7, length(gms_17025$X))
 
 gm_ll <- rbind(gms_26385, gms_25003, gms_46347, gms_12535, gms_13555, gms_31890, gms_17025)
 fitgm_ll <- survfit(formula=Surv(X.2,status)~group, data=gm_ll)
-plot(fitgm_ll)
+
+par(mfrow=c(1,1))
+plot(fitgm_ll, xlim=c(0,500), ylab="Fraction survived", xlab="Time (days)", lwd=c(2.5,2.5, 2.5, 2.5, 2.5, 2.5,2.5), col=c(1:7), main="G-cross, ll survival for peak markers")
+legend(400,.9, legend=c("26385", "25003", "46347", "12535", "13555", "31890", "17025"), lwd=c(2.5,2.5, 2.5, 2.5, 2.5, 2.5,2.5), col=c(1:7))
