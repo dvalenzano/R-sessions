@@ -1,7 +1,7 @@
 #Goal: To test a control region in AA cross LG3, where males are longer-lived than females. Here het males are not longer lived than het females
 
-aanpeak_m <- read.csv('/Volumes/group_dv/personal/DValenzano/Nov2014/AA-cross/m_notpeakAA.csv', sep=',', header=TRUE)
-aanpeak_f <- read.csv('/Volumes/group_dv/personal/DValenzano/Nov2014/AA-cross/f_notpeakAA.csv', sep=',', header=TRUE)
+aanpeak_m <- read.csv('/Volumes/group_dv/personal/DValenzano/Nov2014/AA-cross/m_notpeakAA2.csv', sep=',', header=TRUE)
+aanpeak_f <- read.csv('/Volumes/group_dv/personal/DValenzano/Nov2014/AA-cross/f_notpeakAA2.csv', sep=',', header=TRUE)
 
 aanpeak_m$status <- rep(1, length(aanpeak_m$X))
 aanpeak_f$status <- rep(1, length(aanpeak_f$X))
@@ -613,104 +613,105 @@ aamf_34540_h <- rbind(aams_34540_h,aafs_34540_h)
 par(mfrow=c(4,5))
 
 fitmf_27839 <- survfit(formula=Surv(X.2,status)~X.1, data=aamf_25041_h)
-plot(fitmf_27839, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AA-LG3, ll/sl surv npeak marker (27839)")
+plot(fitmf_27839, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AALG3 het nsurv snp (27839)")
 #legend(400,.9, legend=c("males", "females"), lwd=c(2.5,2.5), lty=c(1,2))
 leg.txt <- c("males", "females")
 legend("topright", legend=leg.txt, lty=c(1,2), lwd=c(2.5,2.5))
 
 fitmf_21837 <- survfit(formula=Surv(X.2,status)~X.1, data=aamf_21837_h)
-plot(fitmf_21837, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AA-LG3, ll/sl surv npeak marker (21837)")
+plot(fitmf_21837, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AALG3 het nsurv snp (21837)")
 #legend(400,.9, legend=c("males", "females"), lwd=c(2.5,2.5), lty=c(1,2))
 legend("topright", legend=leg.txt, lty=c(1,2), lwd=c(2.5,2.5))
 
 fitmf_37447 <- survfit(formula=Surv(X.2,status)~X.1, data=aamf_37447_h)
-plot(fitmf_37447, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AA-LG3, ll/sl surv npeak marker (37447)")
+plot(fitmf_37447, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AALG3 het nsurv snp (37447)")
 #legend(400,.9, legend=c("males", "females"), lwd=c(2.5,2.5), lty=c(1,2))
 legend("topright", legend=leg.txt, lty=c(1,2), lwd=c(2.5,2.5))
 
 fitmf_30997 <- survfit(formula=Surv(X.2,status)~X.1, data=aamf_30997_h)
-plot(fitmf_30997, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AA-LG3, ll/sl surv npeak marker (30997)")
+plot(fitmf_30997, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AALG3 het nsurv snp (30997)")
 #legend(400,.9, legend=c("males", "females"), lwd=c(2.5,2.5), lty=c(1,2))
 legend("topright", legend=leg.txt, lty=c(1,2), lwd=c(2.5,2.5))
 
 fitmf_30674 <- survfit(formula=Surv(X.2,status)~X.1, data=aamf_30674_h)
-plot(fitmf_30674, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AA-LG3, ll/sl surv npeak marker (30674)")
+plot(fitmf_30674, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AALG3 het nsurv snp (30674)")
 #legend(400,.9, legend=c("males", "females"), lwd=c(2.5,2.5), lty=c(1,2))
 legend("topright", legend=leg.txt, lty=c(1,2), lwd=c(2.5,2.5))
 
 fitmf_25041 <- survfit(formula=Surv(X.2,status)~X.1, data=aamf_25041_h)
-plot(fitmf_25041, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AA-LG3, ll/sl survival for npeak marker (25041)")
+plot(fitmf_25041, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AALG3 het nsurv snp (25041)")
 #legend(400,.9, legend=c("males", "females"), lwd=c(2.5,2.5), lty=c(1,2))
 legend("topright", legend=leg.txt, lty=c(1,2), lwd=c(2.5,2.5))
 
 fitmf_22860 <- survfit(formula=Surv(X.2,status)~X.1, data=aamf_22860_h)
-plot(fitmf_22860, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AA-LG3, ll/sl surv npeak marker (22860)")
+plot(fitmf_22860, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AALG3 het nsurv snp (22860)")
 #legend(400,.9, legend=c("males", "females"), lwd=c(2.5,2.5), lty=c(1,2))
 legend("topright", legend=leg.txt, lty=c(1,2), lwd=c(2.5,2.5))
 
 fitmf_18891 <- survfit(formula=Surv(X.2,status)~X.1, data=aamf_18891_h)
-plot(fitmf_18891, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AA-LG3, ll/sl surv npeak marker (18891)")
+plot(fitmf_18891, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AALG3 het nsurv snp (18891)")
 #legend(400,.9, legend=c("males", "females"), lwd=c(2.5,2.5), lty=c(1,2))
 legend("topright", legend=leg.txt, lty=c(1,2), lwd=c(2.5,2.5))
 
 fitmf_11124 <- survfit(formula=Surv(X.2,status)~X.1, data=aamf_11124_h)
-plot(fitmf_11124, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AA-LG3, ll/sl surv npeak marker (11124)")
+plot(fitmf_11124, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AALG3 het nsurv snp (11124)")
 legend("topright", legend=leg.txt, lty=c(1,2), lwd=c(2.5,2.5))
 
 fitmf_22990 <- survfit(formula=Surv(X.2,status)~X.1, data=aamf_22990_h)
-plot(fitmf_22990, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AA-LG3, ll/sl surv npeak marker (22990)")
+plot(fitmf_22990, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AALG3 het nsurv snp (22990)")
 #legend(400,.9, legend=c("males", "females"), lwd=c(2.5,2.5), lty=c(1,2))
 legend("topright", legend=leg.txt, lty=c(1,2), lwd=c(2.5,2.5))
 
 fitmf_18523 <- survfit(formula=Surv(X.2,status)~X.1, data=aamf_18523_h)
-plot(fitmf_18523, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AA-LG3, ll/sl surv npeak marker (18523)")
+plot(fitmf_18523, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AALG3 het nsurv snp (18523)")
 #legend(400,.9, legend=c("males", "females"), lwd=c(2.5,2.5), lty=c(1,2))
 legend("topright", legend=leg.txt, lty=c(1,2), lwd=c(2.5,2.5))
 
 fitmf_20516 <- survfit(formula=Surv(X.2,status)~X.1, data=aamf_20516_h)
-plot(fitmf_20516, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AA-LG3, ll/sl surv npeak marker (20516)")
+plot(fitmf_20516, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AALG3 het nsurv snp (20516)")
 #legend(400,.9, legend=c("males", "females"), lwd=c(2.5,2.5), lty=c(1,2))
 legend("topright", legend=leg.txt, lty=c(1,2), lwd=c(2.5,2.5))
 
 fitmf_1421 <- survfit(formula=Surv(X.2,status)~X.1, data=aamf_1421_h)
-plot(fitmf_1421, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AA-LG3, ll/sl surv npeak marker (1421)")
+plot(fitmf_1421, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AALG3 het nsurv snp (1421)")
 #legend(400,.9, legend=c("males", "females"), lwd=c(2.5,2.5), lty=c(1,2))
 legend("topright", legend=leg.txt, lty=c(1,2), lwd=c(2.5,2.5))
 
 fitmf_16997 <- survfit(formula=Surv(X.2,status)~X.1, data=aamf_16997_h)
-plot(fitmf_16997, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AA-LG3, ll/sl surv npeak marker (16997)")
+plot(fitmf_16997, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AALG3 het nsurv snp (16997)")
 #legend(400,.9, legend=c("males", "females"), lwd=c(2.5,2.5), lty=c(1,2))
 legend("topright", legend=leg.txt, lty=c(1,2), lwd=c(2.5,2.5))
 
 fitmf_8546 <- survfit(formula=Surv(X.2,status)~X.1, data=aamf_8546_h)
-plot(fitmf_8546, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AA-LG3, ll/sl surv npeak marker (8546)")
+plot(fitmf_8546, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AALG3 het nsurv snp (8546)")
 #legend(400,.9, legend=c("males", "females"), lwd=c(2.5,2.5), lty=c(1,2))
 legend("topright", legend=leg.txt, lty=c(1,2), lwd=c(2.5,2.5))
 
 fitmf_15646 <- survfit(formula=Surv(X.2,status)~X.1, data=aamf_15646_h)
-plot(fitmf_15646, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AA-LG3, ll/sl surv npeak marker (15646)")
+plot(fitmf_15646, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AALG3 het nsurv snp (15646)")
 #legend(400,.9, legend=c("males", "females"), lwd=c(2.5,2.5), lty=c(1,2))
 legend("topright", legend=leg.txt, lty=c(1,2), lwd=c(2.5,2.5))
 
 fitmf_38791 <- survfit(formula=Surv(X.2,status)~X.1, data=aamf_38791_h)
-plot(fitmf_38791, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AA-LG3, ll/sl surv npeak marker (38791)")
+plot(fitmf_38791, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AALG3 het nsurv snp (38791)")
 #legend(400,.9, legend=c("males", "females"), lwd=c(2.5,2.5), lty=c(1,2))
 legend("topright", legend=leg.txt, lty=c(1,2), lwd=c(2.5,2.5))
 
 fitmf_40193 <- survfit(formula=Surv(X.2,status)~X.1, data=aamf_40193_h)
-plot(fitmf_40193, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AA-LG3, ll/sl surv npeak marker (40193)")
+plot(fitmf_40193, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AALG3 het nsurv snp (40193)")
 #legend(400,.9, legend=c("males", "females"), lwd=c(2.5,2.5), lty=c(1,2))
 legend("topright", legend=leg.txt, lty=c(1,2), lwd=c(2.5,2.5))
 
 fitmf_17058 <- survfit(formula=Surv(X.2,status)~X.1, data=aamf_17058_h)
-plot(fitmf_17058, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AA-LG3, ll/sl surv npeak marker (17058)")
+plot(fitmf_17058, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AALG3 het nsurv snp (17058)")
 #legend(400,.9, legend=c("males", "females"), lwd=c(2.5,2.5), lty=c(1,2))
 legend("topright", legend=leg.txt, lty=c(1,2), lwd=c(2.5,2.5))
 
 fitmf_34540 <- survfit(formula=Surv(X.2,status)~X.1, data=aamf_34540_h)
-plot(fitmf_34540, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AA-LG3, ll/sl surv npeak marker (34540)")
+plot(fitmf_34540, xlim=c(0,550), ylab="Fraction survived", xlab="Time (days_h)", lwd=c(2.5,2.5), lty=c(1,2), main="AALG3 het nsurv snp (34540)")
 #legend(400,.9, legend=c("males", "females"), lwd=c(2.5,2.5), lty=c(1,2))
 legend("topright", legend=leg.txt, lty=c(1,2), lwd=c(2.5,2.5))
+
 
 
 
