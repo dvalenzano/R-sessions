@@ -1,6 +1,5 @@
 # Goal: to calculate FDR on survival QTL for cross AAo and Go. This is done both genome-wide and linkage group by linkage group.
 # There is a brother python code called 25-Jan-2015.py
-
 load("/Volumes/group_dv/personal/DValenzano/Dec2014/RF/pval4dario.rdata")
 
 ecdf.pval<-ecdf(go.pval)
@@ -43,19 +42,8 @@ gopadj <- p.adjust(gop, method="BH")
 gopadj
 min(gopadj)
 lgp$p.adj <- gopadj
-write.table(laap, file="/Volumes/group_dv/personal/DValenzano/Jan2015/go_days_padj.csv")
+write.table(lgp, file="/Volumes/group_dv/personal/DValenzano/Jan2015/go_days_padj.csv")
 
-
-
-##### 25-Jan-2015 ###### CALCULATE FDR IN CROSS AA #####
-
-laap <- read.csv(file="/Volumes/group_dv/personal/DValenzano/Jan2015/aao_days_pval.csv", header=T, sep=',')
-aaop <- laap$pval
-aaopadj <- p.adjust(aaop, method="BH")
-aaopadj
-min(aaopadj)
-laap$p.adj <- aaopadj
-write.table(laap, file="/Volumes/group_dv/personal/DValenzano/Jan2015/aao_days_padj.csv")
 # here there is a python intermezzo
 
 gop2 <- read.csv(file="/Volumes/group_dv/personal/DValenzano/Jan2015/go_pq.csv", header=T, sep=',')
@@ -128,6 +116,16 @@ min(gop2$p.adg_lg)
 
 write.table(gop2, file="/Volumes/group_dv/personal/DValenzano/Jan2015/go_pq2.csv")
 
+
+##### 25-Jan-2015 ###### CALCULATE FDR IN CROSS AA #####
+
+laap <- read.csv(file="/Volumes/group_dv/personal/DValenzano/Jan2015/aao_days_pval.csv", header=T, sep=',')
+aaop <- laap$pval
+aaopadj <- p.adjust(aaop, method="BH")
+aaopadj
+min(aaopadj)
+laap$p.adj <- aaopadj
+write.table(laap, file="/Volumes/group_dv/personal/DValenzano/Jan2015/aao_days_padj.csv")
 
 ### Now I calculate the corrected p lg by lg ####
 
