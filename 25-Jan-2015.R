@@ -1,5 +1,6 @@
 # Goal: to calculate FDR on survival QTL for cross AAo and Go. This is done both genome-wide and linkage group by linkage group.
 # There is a brother python code called 25-Jan-2015.py
+
 load("/Volumes/group_dv/personal/DValenzano/Dec2014/RF/pval4dario.rdata")
 
 ecdf.pval<-ecdf(go.pval)
