@@ -18,3 +18,12 @@ c1.qval2$marker <- c1p$marker
 c1.qval2[1:10,]
 
 write.table(c1.qval2, file="/Volumes/group_dv/personal/DValenzano/Jan2015/c1-qvals.csv")
+
+gdays <- read.csv('/Volumes/group_dv/personal/DValenzano/Sep2014/qtl-direction-analysis/ReAutoReqtlresults/gdays2_tab.csv', sep=',', header=TRUE)
+aadays <- read.csv('/Volumes/group_dv/personal/DValenzano/Oct2014/aadays2_tab.csv', sep=',', header=TRUE)
+
+c1logq <- gdays[,1:4]
+c2logq <- aadays[,1:4]
+
+write.table(c1logq, file="/Volumes/group_dv/personal/DValenzano/Jan2015/c1-logqvals.csv")
+write.table(c2logq, file="/Volumes/group_dv/personal/DValenzano/Jan2015/c2-logqvals.csv")
