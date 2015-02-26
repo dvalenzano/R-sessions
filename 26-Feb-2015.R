@@ -1,5 +1,3 @@
-#Goal: to measure the median lifespan difference between F2 fish with the GRZ/GRZ allele and those with the MZM-0703/MZM-0703 allele
-
 library(survival)
 
 g <- read.csv(file="/Volumes/group_dv/personal/DValenzano/Sep2014/g_days2.csv", header=T, sep=',')
@@ -17,9 +15,13 @@ legend(400,.9, legend=c("sl/sl","sl/ll", "ll/ll"), lwd=c(2.5,2.5, 2.5), col=c(2:
 prova <- data.frame(g2$X.2, g2$X46347)
 
 prova_ss <- subset(prova, prova$g2.X46347==0)
+prova_sl <- subset(prova, prova$g2.X46347==1)
 prova_ll <- subset(prova, prova$g2.X46347==2)
 
 ss <- as.numeric(as.character(prova_ss$g2.X.2))
+sl <- as.numeric(as.character(prova_sl$g2.X.2))
 ll <- as.numeric(as.character(prova_ll$g2.X.2))
 
 100*(median(ll)/median(ss) -1)
+100*(median(sl)/median(ss) -1)
+100*(median(ll)/median(ls) -1)
