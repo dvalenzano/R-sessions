@@ -769,8 +769,8 @@ min_logqvalsurv_lg <- c(min_logqvalsurv_lg1, min_logqvalsurv_lg2, min_logqvalsur
                         min_logqvalsurv_lg17, min_logqvalsurv_lg18, min_logqvalsurv_lg19)
 
 
-df_sex2 <- data.frame(cr1p$marker, cr1p$LG, cr1p$cM, qvalsex_gw, min_logqvalsex_gw, qvalsex_lg, min_logqvalsex_lg)
-df_surv2 <- data.frame(cr1p$marker, cr1p$LG, cr1p$cM, qvalsurv_gw, min_logqvalsurv_gw, qvalsurv_lg, min_logqvalsurv_lg)
+df_sex2 <- data.frame(cr1p$marker, cr1p$LG, cr1p$cM, cr1p$sex, qvalsex_gw, min_logqvalsex_gw, qvalsex_lg, min_logqvalsex_lg)
+df_surv2 <- data.frame(cr1p$marker, cr1p$LG, cr1p$cM, cr1p$days, qvalsurv_gw, min_logqvalsurv_gw, qvalsurv_lg, min_logqvalsurv_lg)
 
 write.table(df_sex2, file="/Volumes/group_dv/personal/DValenzano/month-by-month/May2015/cr1_sex2-qvals.csv")
 
