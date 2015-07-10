@@ -56,6 +56,26 @@ abline(v=72, lwd=2, lty=2)
 #plot.new()
 legend(x="top", c("1", "1.3k", "5k", "10k"), col=c("gray48", 2,3,4), lty=1, lwd=3, bty="n")
 
+###### PLOTTING STANDARD DEVIATION ######
+sd_abcdz <- read.csv('./het-sd.csv', sep=',', head=T)
+sd_xabcdz <- c(1:(length(sd_abcdz$het)/5))
+sd_abcdz0 <- subset(sd_abcdz, group == 0)
+sd_abcdz1 <- subset(sd_abcdz, group == 1)
+sd_abcdz5k <- subset(sd_abcdz, group == 3)
+sd_abcdz10k <- subset(sd_abcdz, group == 6)
+sd_abcdz60k <- subset(sd_abcdz, group == "z")
+
+plot(sd_xabcdz, sd_abcdz0$het, ylim = c(0.75, 1.2), ylab = "Genetic Variance", xlab = "Age", type="l", lwd=3, col="gray48", xaxt="n", bty="n")
+axis(1, at=1:126, labels=x2, tick=T, lwd.ticks=0)
+lines(sd_xabcdz, sd_abcdz1$het, col=2, lwd=3)
+lines(sd_xabcdz, sd_abcdz5k$het, col=3, lwd =3)
+lines(sd_xabcdz, sd_abcdz10k$het, col=4, lwd=3)
+lines(sd_xabcdz, sd_abcdz60k$het, col=5, lwd=3)
+abline(v=16, lwd=2, lty=2)
+abline(v=72, lwd=4, lty=1)
+
+
+
 
 ########## FIGURE 4A ###########
 fig4a <- read.csv('sc_25k.csv', sep=',', header=F)
